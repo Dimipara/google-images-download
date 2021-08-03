@@ -736,7 +736,7 @@ class googleimagesdownload:
                 # for keyword in keywords.split(','):
                 #     image_name = str(keyword)
                 #     print(image_name)
-                image_name = search_term + "." + "jpeg"
+                image_name = search_term + "." + "png"
                 print(image_name,'XXXxXXXXx')
 
 
