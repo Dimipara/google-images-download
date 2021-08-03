@@ -716,7 +716,9 @@ class googleimagesdownload:
         return download_status, download_message
 
     # Download Images
-    def download_image(self,image_url,image_format,main_directory,dir_name,count,print_urls,socket_timeout,prefix,print_size,no_numbering,search_term):
+    def download_image(self, image_url, image_format, main_directory, dir_name, count, print_urls, socket_timeout,
+                       prefix, print_size, no_numbering, no_download, save_source, img_src, silent_mode, thumbnail_only,
+                       format, ignore_urls):
         if print_urls:
             print("Image URL: " + image_url)
         try:
