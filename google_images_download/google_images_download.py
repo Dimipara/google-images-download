@@ -1064,7 +1064,7 @@ class googleimagesdownload:
                     if arguments['image_directory']:
                         dir_name = arguments['image_directory']
                     elif arguments['no_directory']:
-                        dir_name = ''
+                        dir_name = search_term # THIS IS WHAT IS CHANGED. PREVIOUS VERSION: dir_name = ''
                     else:
                         dir_name = search_term + (
                             '-' + arguments['color'] if arguments['color'] else '')  # sub-directory
