@@ -618,14 +618,14 @@ class googleimagesdownload:
         return search_keyword
 
     # make directories
-    def create_directories(self, main_directory, dir_name, thumbnail, thumbnail_only, sub_dir_name):
+    def create_directories(self, main_directory, dir_name, thumbnail, thumbnail_only):
         dir_name_thumbnail = dir_name + " - thumbnail"
         # make a search keyword  directory
         try:
             if not os.path.exists(main_directory):
                 os.makedirs(main_directory)
                 time.sleep(0.15)
-                path = (sub_dir_name)  #WAS dir_name
+                path = (dir_name)
                 sub_directory = os.path.join(main_directory, path)
                 if not os.path.exists(sub_directory):
                     os.makedirs(sub_directory)
@@ -634,7 +634,7 @@ class googleimagesdownload:
                     if not os.path.exists(sub_directory_thumbnail):
                         os.makedirs(sub_directory_thumbnail)
             else:
-                path = (sub_dir_name)  # WAS dir_name
+                path = (dir_name)
                 sub_directory = os.path.join(main_directory, path)
                 if not os.path.exists(sub_directory):
                     os.makedirs(sub_directory)
@@ -1066,12 +1066,12 @@ class googleimagesdownload:
                     elif arguments['no_directory']:
                         dir_name = '' 
                     else:
-                        dir_name = search_keyword[i]  # CHANGED THIS. ORIGINAL: dir_name = search_term + ('-' + arguments['color'] if arguments['color'] else '') # sub-directory 
-                        sub_dir_name = search_term # ADDED THIS. WAS NOT HERE ORIGINALLY  
+                        dir_name = search_term + (  
+                                   '-' + arguments['color'] if arguments['color'] else '') # sub-directory 
 
                     if not arguments["no_download"]:
                         self.create_directories(main_directory, dir_name, arguments['thumbnail'],
-                                                arguments['thumbnail_only'], sub_dir_name)  # create directories in OS   # ADDED THE sub_dir_name AT THE END
+                                                arguments['thumbnail_only'])  # create directories in OS
 
                     params = self.build_url_parameters(arguments)  # building URL with params
 
